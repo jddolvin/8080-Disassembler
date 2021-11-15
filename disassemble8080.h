@@ -5,6 +5,6 @@
  Prototypes for the functions
  Disassembles 8080 opcodes
 */
-int Dissasemble8080Op(unsigned char *codeBuffer, int pc);
+int Disassemble8080Op(unsigned char *codeBuffer, int pc);
 
 #endif

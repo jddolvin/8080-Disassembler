@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include "disassemble8080.h"
 /* Algorithm for disassembling 8080 code:
  1.) Read the code into a buffer
 
@@ -247,7 +252,7 @@ int Disassemble8080Op(unsigned char *codeBuffer, int pc)
         case 0xd3: printf("OUT  #$%02x", code[1]); opBytes=2; break;
         case 0xd4: printf("CNC  $%02x%02x", code[2], code[1]); opBytes=3; break;
         case 0xd5: printf("PUSH D"); break;
-        case 0xd6: printf("SUI  #$%02x"); opBytes=2; break;
+        case 0xd6: printf("SUI  #$%02x", code[1]); opBytes=2; break;
         case 0xd7: printf("RST  2"); break;
         case 0xd8: printf("RC"); break;
         case 0xd9: printf("NOP"); break;
